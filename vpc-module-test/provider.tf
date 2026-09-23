@@ -4,13 +4,14 @@ terraform {
       source  = "hashicorp/aws"
       version = "6.63.0"
     }
-  }
-  backend "s3"{
+    }
+    backend "s3"{
         bucket = "jithesh-tf-remote-state"
-        key = "ec2-test" #we should have unique key with in the bucket, same key should not be used in other purpose 
+        key = "vpc-test" #we should have unique key with in the bucket, same key should not be used in other purpose 
         region = "us-east-1"
         dynamodb_table = "jithesh-state-locking"
     }
+
 }
 
 provider "aws" {
